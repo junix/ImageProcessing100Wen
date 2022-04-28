@@ -4,14 +4,17 @@ import cv2
 
 
 def BGR2RGB(img):
-    b = img[:, :, 0].copy()
-    g = img[:, :, 1].copy()
-    r = img[:, :, 2].copy()
+    # b = img[:, :, 0].copy()
+    # g = img[:, :, 1].copy()
+    # r = img[:, :, 2].copy()
 
-    # RGB > BGR
-    img[:, :, 0] = r
-    img[:, :, 1] = g
-    img[:, :, 2] = b
+    # # RGB > BGR
+    # img[:, :, 0] = r
+    # img[:, :, 1] = g
+    # img[:, :, 2] = b
+
+    # img = img[:,:,::-1]
+    img = img[:,:,(2,1,0)]
 
     return img
 

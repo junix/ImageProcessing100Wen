@@ -42,7 +42,7 @@ def otsu_binarization(img, th=128):
 
 
 # Read image
-img = cv2.imread("imori.jpg").astype(np.float32)
+img = cv2.imread("../imori.jpg").astype(np.float32)
 H, W, C =img.shape
 
 

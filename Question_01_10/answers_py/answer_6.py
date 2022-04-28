@@ -12,7 +12,7 @@ def dicrease_color(img):
 
 
 # Read image
-img = cv2.imread("imori.jpg")
+img = cv2.imread("../imori.jpg")
 
 # Dicrease color
 out = dicrease_color(img)

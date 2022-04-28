@@ -3,19 +3,24 @@ import numpy as np
 
 # Gray scale
 def BGR2GRAY(img):
-	b = img[:, :, 0].copy()
-	g = img[:, :, 1].copy()
-	r = img[:, :, 2].copy()
+	# b = img[:, :, 0].copy()
+	# g = img[:, :, 1].copy()
+	# r = img[:, :, 2].copy()
 
-	# Gray scale
-	out = 0.2126 * r + 0.7152 * g + 0.0722 * b
-	out = out.astype(np.uint8)
+	# # Gray scale
+	# out = 0.2126 * r + 0.7152 * g + 0.0722 * b
+	# out = out.astype(np.uint8)
+
+	# out = 0.2126 * r + 0.7152 * g + 0.0722 * b
+	scale = np.array([0.0722, 0.7152, 0.2126])
+	out = np.dot(img, scale).astype(np.uint8)
+	print(img.shape, out.shape)
 
 	return out
 
 
 # Read image
-img = cv2.imread("imori.jpg").astype(np.float)
+img = cv2.imread("../imori.jpg").astype(np.float)
 
 # Grayscale
 out = BGR2GRAY(img)
